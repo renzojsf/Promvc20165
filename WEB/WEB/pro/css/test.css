@@ -1,0 +1,33 @@
+.logo{
+	background-color: red;
+	float: left;
+	clear: left;
+}
+img{
+	width:100%;
+}
+.menu{
+display: inline-block;
+background-color: orange;
+vertical-align: middle;
+
+}
+.redes{
+	
+display: inline-block;
+background-color: green;
+float: right;
+vertical-align: middle;
+}
+nav{
+	vertical-align: middle;
+	display: block;
+}
+@media screen and (max-width: 400px){	
+	.redes{
+		display: inline-block;
+		float: none;
+	}
+	.menulateral{}
+
+}

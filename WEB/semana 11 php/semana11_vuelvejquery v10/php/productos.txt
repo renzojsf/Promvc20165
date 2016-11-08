@@ -1,0 +1,60 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 11-08-2010 a las 21:06:10
+-- Versión del servidor: 5.0.45
+-- Versión de PHP: 5.2.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `ejemplo`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `producto`
+-- 
+
+CREATE TABLE `producto` (
+  `pro_id` int(11) NOT NULL auto_increment,
+  `pro_nom` varchar(40) NOT NULL,
+  `pro_des` varchar(200) NOT NULL,
+  `pro_precio` double NOT NULL,
+  `pro_stock` int(11) NOT NULL,
+  `pro_img` varchar(40) NOT NULL,
+  PRIMARY KEY  (`pro_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+-- 
+-- Volcar la base de datos para la tabla `producto`
+-- 
+
+INSERT INTO `producto` VALUES (1, 'Arreglo de Rosas 01', 'ssdfg', 20, 1, 'ARL01');
+INSERT INTO `producto` VALUES (2, 'Arreglo de Rosas 02', 'jgfjfjgjgjgj', 50, 5, 'ARL02');
+INSERT INTO `producto` VALUES (3, 'Arreglo de Rosas 03', 'KMFJKNGFKNFJK', 50, 5, 'ARL03');
+INSERT INTO `producto` VALUES (4, 'Arreglo de Rosas 04', 'mnvfjkdnfjknj', 57, 8, 'ARL04');
+INSERT INTO `producto` VALUES (5, 'Arreglo de Rosas 05', 'LKFKLGFNJK', 24, 2, 'ARL05');
+INSERT INTO `producto` VALUES (6, 'Arreglo de Rosas 06', 'DNBFBJK', 80, 58, 'ARL06');
+INSERT INTO `producto` VALUES (7, 'Arreglo de Rosas 07', 'NVGJNGJK', 80, 25, 'ARL07');
+INSERT INTO `producto` VALUES (8, 'Arreglo de Rosas 08', 'MVKJDFJH', 87, 54, 'ARL08');
+INSERT INTO `producto` VALUES (9, 'Arreglo de Rosas 09', 'NGJGN', 85, 1, 'ARL09');
+INSERT INTO `producto` VALUES (10, 'Arreglo de Rosas 10', 'NMJVFJKFJ', 58, 57, 'ARL10');
+INSERT INTO `producto` VALUES (11, 'Arreglo de Rosas 11', 'KNMGFJKHF', 58, 45, 'ARL11');
+INSERT INTO `producto` VALUES (12, 'Arreglo de Rosas 12', 'KFJFIONMKO', 24, 2, 'ARL12');
+INSERT INTO `producto` VALUES (13, 'Arreglo de Rosas 13', 'KNMJFKOFJ', 12, 1, 'ARL13');
+INSERT INTO `producto` VALUES (14, 'Arreglo de Rosas 14', 'JFJKLF', 24, 5, 'ARL14');
+INSERT INTO `producto` VALUES (15, 'Arreglo de Rosas 15', 'MGKJGKL', 125, 5, 'ARL15');
+INSERT INTO `producto` VALUES (16, 'Arreglo de Rosas 16', 'KFIOJTIOJIOPJ', 14, 1, 'ARL16');
+INSERT INTO `producto` VALUES (17, 'Arreglo de Rosas 17', 'ÑLFKGJKKLGJKL', 58, 12, 'ARL17');
+INSERT INTO `producto` VALUES (18, 'Arreglo de Rosas 18', 'DHUIFTHOIGJIO', 254, 5, 'ARL18');
+INSERT INTO `producto` VALUES (19, 'Arreglo de Rosas 19', 'JFJGJGNJKGNGJKN', 58, 2, 'ARL19');
+INSERT INTO `producto` VALUES (20, 'Arreglo de Rosas 20', 'LCKKNVFIFJN', 258, 45, 'ARL20');
+INSERT INTO `producto` VALUES (21, 'Arreglo de Rosas 21', 'NMFJFJKGHJKFHJK', 215, 12, 'ARL21');
+INSERT INTO `producto` VALUES (22, 'Arreglo de Rosas 22', 'MFMFJFJF', 125, 258, 'ARL22');
+INSERT INTO `producto` VALUES (23, 'Arreglo de Rosas 23', 'NMBGMBKGL', 45, 58, 'ARL23');
+INSERT INTO `producto` VALUES (24, 'Arreglo de Rosas 24', 'JFJFIRIOTRJRIOJ', 58, 45, 'ARL24');
+INSERT INTO `producto` VALUES (25, 'Arreglo de Rosas 25', 'KJGKLTJYILJ', 103, 55, 'ARL25');

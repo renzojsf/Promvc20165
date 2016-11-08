@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?DOCTYPE carta [ 
+	<!ELEMENT carta (fecha?, saludo+,cuerpo+, parrafo+, despedida?) >
+	<!ELEMENT fecha (#PCDATA)>
+	<!ELEMENT parrafo (a,b)>
+	<!ENTITY abc "Aasdf Basdf Casdf">
+ ]?>
+<?xml-stylesheet href="estilosxml.css" ?>
+<carta>
+	<fecha>Lima 14 de febrero del 2010</fecha>
+	<saludo>
+		Hola querido novio &abc;
+	</saludo>
+	<cuerpo>
+		<parrafo>
+			Te estube recordando
+		</parrafo>
+		<parrafo>
+			No me diste mi regalo
+		</parrafo>
+		<parrafo>
+			Tu amigo si me dio mi regalo
+		</parrafo>
+		<parrafo>
+			Terminamos !!!
+			<a>hola</a>
+			<b>adios</b>
+		</parrafo>
+		<despedida>
+			Saludos a tu mama
+		</despedida>
+	</cuerpo>
+</carta>

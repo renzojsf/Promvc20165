@@ -1,0 +1,38 @@
+HOY 16 DE SET
+TEMA
+
+*TRABAJO CON ARCHIVOS PLANOS.
+*FUNCIONES Y MANEJO DE ARCHIVOS
+*GRABAR Y RECUPERAR INFORMACION
+-----------------------
+FUNCIONES DE MANEJO DE ARCHIVOS
+ $PUNTERO=fopen("nombre_archivo","modo");
+ -----------abre el archivo
+ modo=> r,r+=modo lectura.puntero al inicio ()
+        w,w+= modo creacion. si no existe lo crea si existe limpia el contenido  
+        a,a+=modo de agregar. puntero al final
+
+$dato=fgets($puntero,cantidad-1)
+recupera informacion del archivo.
+recupera la cantidad de caracteres -1
+
+$dato=fgets($puntero,10);
+ recupera 9 y lo almacena en dato
+==========================================
+fputs($puntero,$cadena);
+graba data en el archivo plano
+lo que contenga la variable cadena lo grabara en el archivo referenciado en el puntero
+
+fclose($puntero);
+cerrar un archivo.
+===================
+"es recomendable cerrarlo
+sino se daña
+=======================
+fpassthru($puntero);
+volcar el contenido del archivo en la salida por defecto(pantalla)
+=================================================================
+$matriz=file("nombre_archivo");
+abre el archivo y lo almacena en la matriz
+recupera todas las filas del archivo referenciado y las almacena en una mattriz
+

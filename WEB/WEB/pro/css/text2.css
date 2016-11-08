@@ -1,0 +1,32 @@
+.header{
+	background-color: red;
+	float: none;
+}
+
+.menui{
+	background-color: pink;
+	float: none;
+}
+.isquierda{
+	background-color: blue;
+	float: left;
+	width: 15%;
+	padding-bottom: 80%;
+}
+.contenido{
+	background-color: green;
+	float: left;
+	width: 70%;
+	padding-bottom: 80%;
+}
+.derecha{
+	background-color: orange;
+	float: left;
+	width: 15%;
+	padding-bottom: 80%;	
+}
+.footer{
+	background-color: black;
+	float: none;
+	clear: both;
+}

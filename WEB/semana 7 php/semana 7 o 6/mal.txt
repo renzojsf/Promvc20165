@@ -1,0 +1,20 @@
+		//codigo aca.
+//razo.dat es donde se deverian guardar enves de un .txt
+//grabar datoos
+//formulario
+include("distrito.inc");
+$file=fopen("contador.log","r");//abrimos de modo lectura el log
+$contador=fgets($file,10);	//estrae y lo guarda en contador
+//cerramos el archivo
+fclose($file);
+echo"<h2>IEmpresas Ingresadas: $contador</h2>";
+echo"<form name='frm1' action=''method='post''>";
+echo"<h2>Razon Social:<Input type='text' name='razon' size='40'><br>
+Distritos:<Select name='distrito'>";
+for($i=0;$i<=12;$i++){
+$distrito=distrito($i);//llama a funcion
+echo"<option value=''$distrito'>$distrito</option>";
+}
+echo"</select><h2>";
+echo"<br><input type='submit' value='grabar' name=grabar> 
+input type='submit' value='mostrar' name='mostrar' ></form>";

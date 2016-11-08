@@ -1,0 +1,57 @@
+<HTML>
+ <HEAD>
+   <TITLE>IDAT - Formularios</TITLE>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><style type="text/css">
+<!--
+body {
+	background-color: #FFCCCC;
+}
+-->
+ </style></HEAD>
+ <BODY>
+   <CENTER>
+     <H2>Formularios: variables complejas</H2><HR>
+     <FORM METHOD="POST" ACTION="../../semana 5 php/semana5 php 1/formularios2.php">
+        <TABLE>
+          <TR>
+            <TD ALIGN="LEFT"><strong>Modelo:</strong></TD>
+            <TD ALIGN="RIGHT" COLSPAN="3"><INPUT TYPE="TEXT" NAME="coche[modelo]" SIZE=25"></TD>
+          </TR>
+          <TR>
+            <TD ALIGN="LEFT"><strong>Marca:</strong></TD>
+            <TD ALIGN="RIGHT" COLSPAN="3"><INPUT TYPE="TEXT" NAME="coche[marca]" SIZE=25"></TD>
+          </TR>
+          <TR ALIGN="LEFT">
+            <TD><strong>Motor:</strong></TD>
+            <TD><INPUT NAME="coche[motor]" TYPE="TEXT" SIZE="5"></TD>
+            <TD><strong>Cilindrada:</strong></TD>
+            <TD><INPUT TYPE="TEXT" NAME="coche[cc]" SIZE="5"></TD>
+          </TR>
+          <TR>
+            <TD ALIGN="LEFT"><strong>Combustible:</strong></TD>
+            <TD ALIGN="RIGHT" COLSPAN="3">
+               <strong>
+               <INPUT TYPE="RADIO" NAME="coche[combustible]" VALUE="gasolina" CHECKED>
+               Gasolina
+               <INPUT TYPE="RADIO" NAME="coche[combustible]" VALUE="diesel">
+               Diesel            </strong></TD>
+          </TR>
+          <TR>
+            <TD ALIGN="LEFT"><strong>Opciones:</strong></TD>
+            <TD ALIGN="RIGHT" COLSPAN="3">
+               <strong>
+               <SELECT MULTIPLE NAME="opciones[]">
+                 <OPTION VALUE="AA">Aire Acondicionado</OPTION>
+                 <OPTION VALUE="CD">Radio CD</OPTION>
+                 <OPTION VALUE="CA">Climatizador</OPTION>
+                 <OPTION VALUE="SN">Sistema de Navegación</OPTION>
+               </SELECT>
+               </strong> </TD>
+          </TR>
+        </TABLE>
+        <HR><BR>
+        <INPUT TYPE="SUBMIT"> <INPUT TYPE="RESET">
+     </FORM>
+   </CENTER>
+ </BODY>
+</HTML>

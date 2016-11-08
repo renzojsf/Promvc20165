@@ -1,0 +1,47 @@
+.boton
+{
+	background-color:#4480b6;
+	border-top:solid 1px #d0e1f1;
+	border-left:solid 1px #d0e1f1;
+	border-bottom:solid 1px #112445;
+	border-right:solid 1px #112445;
+	color:white;
+	font-family:verdana;
+	font-size:12px;
+	height:25px;
+	cursor:pointer;
+}
+
+.botonMenu1
+{
+	width:180px;
+	border-left:solid 1px #7aa9d3
+}
+
+.botonMenu2
+{
+	border-left:solid 1px #afdeff;
+	text-align:center;
+	color:#295886;
+	font-family:verdana;
+	font-size:12px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.caja
+{
+	font-family:Verdana;
+	font-size:12px;
+	height:25px;
+	border:solid 1px #666666;
+	text-indent:10px;
+	padding-top:4px;
+}
+
+.cabeza
+{
+	background-image:url('../img/degra.png');
+	background-repeat:repeat-x;
+	height:25px;
+}

@@ -1,0 +1,10 @@
+nro	empresa	contacto1	Direccion	Tfijo
+1	commit sa	javier saavedra		706-6641
+2	infordata	Javier Lam Lozano	av arenales 815	619-6800   /  433-2828 anexo 211
+3	bussiness solutions providers	Javier Bustamante R javier@bspsac.net	"Calle Las Camelias 790 oficina 505, San ISIDRO"	462-2318 / 462-2656
+4	itservice	guido schenone	Prolongación Arenales 780 - Miraflores	440-2404
+5	LEAFAR	WILLIAM SOTOMARINO	Av Paseo de la República 6176 - MIRAFLORES	242-5485
+6	MASTER COM	MARIA MONTOYA	Av Arequipa 3908	4226666
+7	INGRAM MICRO PERU S.A.	Cristhian Venegas	"Calle Las Camelias 790 oficina 505, San ISIDRO"	4409040 anexo 104
+8	datasum SRL	Gloria Montenegro Arauco	Diego de Almagro 497 Jesus Maria	4634273
+9	Electrodata 	ERICK JHONSON	Av Joaquin Madrid 189 San Borja	4761208

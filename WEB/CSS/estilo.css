@@ -1,0 +1,27 @@
+body{
+
+	font-family: Arial,Verdana,Tahoma;
+	font-size:14px;
+	color:#666;
+}
+.contenedorslider{
+	width: 800px;
+	height: 520px;
+	padding: 20px;
+	border: solid 1px #999;
+	margin: auto;
+	background-color: #F1F1F1;	
+}
+#slider{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	padding: 10px;
+	background-color: #000;
+	margin: 0 auto;
+}
+#slider > div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

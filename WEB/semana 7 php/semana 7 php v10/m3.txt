@@ -1,0 +1,21 @@
+		<?php
+		//codigo aca.
+//grabar datos
+
+//formulario
+include("distritos.inc");
+$file=fopen("contador.log","r");
+$contador=fgets($file,10);
+fclose($file);
+echo "<h2>Empresas ingresadas :  $contador</h2>";
+echo "<form name='frm1' action='' method='post'>";
+echo"<h2>Razon Social: <input type='text' name='razon' size='40'><br>
+Distritos: <select name='distrito'>";
+for ($i=0;$i<=12;$i++)
+{
+	$distrito=distrito($i); //llama a funcion
+	echo "<option value='$distrito'>$distrito</option>";
+}
+echo "</select></h2>";
+echo "<br><input type='submit' value='Grabar' name='grabar'><input type='submit' value='Mostrar' name='mostrar'></form>";
+		?>

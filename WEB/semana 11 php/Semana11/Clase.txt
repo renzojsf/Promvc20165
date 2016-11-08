@@ -1,0 +1,7 @@
+Hoy : 14 de Octubre
+-------------------
+Recursos \\a7_19
+----------------
+Tema :
+ * Conexion php & mysql
+-----------------------

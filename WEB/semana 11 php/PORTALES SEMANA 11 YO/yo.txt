@@ -1,0 +1,21 @@
+hoy 26 de abror
+
+temas
+*fireworks
+* escritorio de fw
+* seleccion,importar,ext
+--------------------
+a. creacio de piezas graficas web
+b. diagramar sectoriar im producto web.
+control++1 aagranda la imagen 
+control 2  aum mas 
+ presionando h aparece la mano
+===============================0
+tokar nota de los valores x y y
+x=1
+y=0
+borro imagen
+controlc+ select copia imagen
+ecp deselecciona
+
+72 pixelñes  para ña tarea

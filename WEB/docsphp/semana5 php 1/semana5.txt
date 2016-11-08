@@ -1,0 +1,7 @@
+inclusion de archivos.
+uso de la fx include.
+required.
+trabajo con variables y funciones.
+*****************************************
+ejercicio de clase
+   trabajo con formularios y controles, mostrando el resultado en una pagina aparte y en la misma pagina.  => usando el foreach.

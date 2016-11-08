@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+carta, parrafo{
+	display:block;
+}
+
+fecha{
+	font-style:italic;
+}

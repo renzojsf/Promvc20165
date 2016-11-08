@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="css/TEST3.css">
+			<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="js/javascritp.js"></script>
+</head>
+<body>
+<header>
+	<div class="logo" clear>
+		<img src="img/logo.png">
+	</div>	
+</header>
+
+<nav>
+<ul class="MENU">
+			<li><a href="#">Pagina Principal</a></li>
+			<li><a href="#">Mis Cursos</a></li>
+			<li><a href="#">Mi Agenda</a></li>
+			<li><a href="#">Mi progreso</a></li>	
+			<li><a href="#">CALENDARIO</a></li>
+			<li><a href="#">SOPORTE</a></li>	
+			<li><a href="#" class="twiter"></a></li>
+			<li><a href="#" class="face"></a></li>
+</ul>
+</nav>
+<div class="handle">Menu</div>
+<div class="usu" >
+<br>
+	<label>Welcome: Usuario</label>
+	<div id="d_reloj"></div>
+</div>
+
+<section>
+
+<div class="menulateral">
+	lista
+</div>
+<div class="cuerpo">
+	cuerpo
+</div>	
+
+</section>
+
+<script type="text/javascript">
+function f_reloj(){
+	var fecha = new Date();
+	var h =fecha.getHours();
+	var m = fecha.getMinutes();
+	var s =fecha.getSeconds();
+	var hora = h + ":" + m + ":" + s;
+	document.getElementById("d_reloj").innerHTML=hora;
+	setTimeout("f_reloj()",1000);		
+}
+f_reloj();
+
+
+</script>
+
+<footer>
+ 	 <p>Pie de pagina</p>
+</footer>
+</body>
+</html>

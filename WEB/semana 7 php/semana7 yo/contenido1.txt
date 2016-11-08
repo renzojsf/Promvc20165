@@ -1,0 +1,32 @@
+Operadores
+
+Los operadores son expresiones que nos permiten manipular los datos que les pasamos, cada uno de los datos que se le pasa a un...
+
+
+Operadores de Aritmética
+Los operadores de aritmética són los operadores básicos para el trabajo con números, nos permiten sumar dos valores,...
+
+
+Operadores de Asignación
+
+Los operadores de asignación, són aquellos que nos permiten modificar el valor de una variable, el operador de asignación...
+
+Operadores de Comparación
+
+Los operadores de comparación son operadores en su mayoría binarios que nos permiten comparar variables devolviendo un valor...
+
+Operadores de Control de Errores
+
+Para evitar que se muestre en página un determinado error que se puede producir eventualmente en una linea PHP dispone del...
+
+Operadores de Incremento
+
+Los operadores de incremento (++) permiten aumentar en una unidad el valor de una variable numérica, los de decremento (--)...
+
+Operadores de Logica
+
+Los operadores de Lógica nos permiten crear expresiones mas complejas para evaluar nuestras estructuras de control,...
+
+Operadores de Cadena
+
+En esta categoría encontramos el operador binario de concatenacion (.), que se encarga de unir dos cadenas dadas la una a...

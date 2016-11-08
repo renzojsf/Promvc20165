@@ -1,0 +1,15 @@
+manejo de archivos
+funcion fopen  => usando punteros.
+fclose
+fpassthru
+readfile
+fgets
+fread
+fwrite.
+fputs.
+flock
+**********************
+adicional sobre matrices.
+************************
+Desarrollar el ejercicio aplicado.
+

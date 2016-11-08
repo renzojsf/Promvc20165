@@ -1,0 +1,125 @@
+<script>
+function anula_pro(id_proceso)
+{
+	if(confirm("Esta seguro de anular este proceso."))
+	{
+		var anulo = document.getElementById('anul');
+		anulo.value = id_proceso;
+		document.forms.anula.submit();
+	}
+}
+</script>
+
+<?
+
+if(isset($_POST['anul']) and !(empty($_POST['anul'])))
+{
+	$con = new conexion();
+	$consulta = "call sp_anula_proceso(".$_POST['anul'].");";
+	$respuesta_ = $con->consulta($consulta);
+}
+
+$con = new conexion();
+$consulta = "call sp_busca_datos_alumno(".$_REQUEST['id'].");";
+$respuesta_ = $con->consulta($consulta);
+while($vector_ = mysqli_fetch_array($respuesta_)){
+$id_a = $_REQUEST['id'];
+?>
+<form name="anula" id="anula" method="post"><input type="hidden" name="anul" id="anul" value="" /></form>
+<table border="0" width="770px" cellpadding="0" cellspacing="0" style="border:solid 1px #CFD9E5;-moz-border-radius: 12px;" align="center">
+ <tr>
+  <td>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" style="border:solid 1px #FAF8F9;-moz-border-radius: 12px; background-image:url(img/degradado.png); background-repeat:repeat-x; background-position:top; font-family:verdana; font-size:12px">
+     <tr height="10px"><td></td></tr>
+     <tr>
+      <td align="center">
+       <table border="0" width="700px" align="center" cellpadding="0" cellspacing="0" style="font-family:verdana;font-size:12px">
+        <tr height="25px"><td width="100px" style="text-indent:15px">Codigo</td><td><?=$vector_['ideducando']?></td><td width="65px" align="left"><input type="button" value="Atras" onclick="javascript:document.location.href='principal.php?sis=<?=$_REQUEST['sis']?>&ven=<?=$_REQUEST['ven']?>&pag=1&ref=<?=$id_a?>';" style="cursor:pointer;font-family:verdana;font-size:12px"></td></tr>
+        <tr height="25px"><td width="100px" style="text-indent:15px">Alumno</td><td><? echo $vector_['apepaterno'].' '.$vector_['apematerno'].', '.$vector_['nombres']; ?></td></tr>
+        <tr height="25px"><td width="100px" style="text-indent:15px">Direccion</td><td><?=$vector_['direccion']?>&nbsp;&nbsp;-&nbsp;&nbsp;Tlf <?=$vector_['telefono']?></td></tr>
+        <tr><td colspan="3">&nbsp;</td></tr>
+        <tr>
+         <td colspan="3">
+         <? $mue=permite(36);$_nota=permite(6);$_pago=permite(7);$_desc=permite(20); ?>
+            <table border="0" align="center" width="700px" cellpadding="0" cellspacing="0">
+             <tr>
+              <td colspan="2">
+               <form name="listado" id="listado" method="post">
+                <table border="0" width="100%" cellpadding="0" cellspacing="1" align="center" style="font-family:verdana; font-size:12px; color:#7999AE">
+                <tr>
+                <td>
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" style="border:solid 1px #7f7f7f;font-size:12px;font-family:verdana;text-shadow:-1px -1px white, 1px 1px #999;color:#333">
+                    <tr height="25px">
+                     <? if($mue=='1'){ ?><td width="25px" align="center" class="cabeza">E</td><? } ?>
+                     <? if($_nota=='1'){ ?><td width="25px" align="center" class="cabeza">N</td><? } ?>
+                     <? if($_pago=='1'){ ?><td width="25px" align="center" class="cabeza">C</td><? } ?>
+                     <? if($_desc=='1'){ ?><td width="25px" align="center" class="cabeza">D</td><? } ?>
+                     <td align="left" style="text-indent:15px" class="cabeza">Descripcion</td>
+                     <td align="center" width="90px" class="cabeza">F Registro</td>
+                     <td align="center" width="90px" class="cabeza">F Inicio</td>
+                     <td align="center" width="90px" class="cabeza">F Fin</td>
+                     <td align="center" width="110px" class="cabeza">Estado</td>
+                    </tr>
+                </table>
+                </td>
+                </tr>
+                 <?
+                 $con = new conexion();
+                 $resultados = 10;
+                 if (empty($_REQUEST["pagina"])){ $inicio = 0; $pagina=1;}else{ $pagina = $_REQUEST["pagina"]; $inicio = ($pagina - 1) * $resultados; }
+                 $consulta = "call sp_busca_proceso_alumno($id_a,0,0);";
+    
+                 $respuesta = $con->consulta($consulta);
+                 $total_registros=mysqli_num_rows($respuesta); 
+                 $total_paginas = ceil($total_registros / $resultados);
+    
+                 $con = new conexion();
+                 $consulta = "call sp_busca_proceso_alumno($id_a,$inicio,$resultados);";
+                 $respuesta = $con->consulta($consulta);
+                 $numero = mysqli_num_rows($respuesta);
+                 while($vector = mysqli_fetch_array($respuesta)){ if($color=='FFFFFF'){$color='C3D9FF';}else{$color='FFFFFF';}?>
+                <tr>
+                 <td style="background-color:#<? echo $color; ?>">
+                  <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" style="border:dashed 1px #A4A4A4;font-size:12px;font-family:verdana">
+                   <tr height="30px" <? if(isset($_REQUEST['ref']) and $_REQUEST['ref']==$vector['idproceso']){ echo "style='background-color:#DDDDDD'";} ?>>
+                    <? if($mue=='1'){ ?><td width="25px" align="center"><? if($vector['estado']=='1'){ ?><img src="img/cancelar.png" onclick="anula_pro(<?=$vector['idproceso']?>);" style="cursor:pointer;" title="Anular proceso academico"><? }else{echo "&nbsp;";} ?></td><? } ?>
+                    <? if($_nota=='1'){ ?><td width="25px" align="center"><img src="img/nota.png" onclick="document.location.href='principal.php?sis=<?=$_REQUEST['sis']?>&ven=<?=$_REQUEST['ven']?>&pag=6&id=<?=$_REQUEST['id']?>&pro=<?=$vector['idproceso']?>';" style="cursor:pointer;" title="Mostrar notas"></td><? } ?>
+                    <? if($_pago=='1'){ ?><td width="25px" align="center"><img src="img/dinero.png" onclick="document.location.href='principal.php?sis=<?=$_REQUEST['sis']?>&ven=<?=$_REQUEST['ven']?>&pag=5&id=<?=$_REQUEST['id']?>&pro=<?=$vector['idproceso']?>';" style="cursor:pointer;" title="Mostrar pagos"></td><? } ?>
+		    		<? if($_desc=='1'){ ?><td width="30px" align="center"><? if($vector['idtipo']==1){ ?><img src="img/descuento.png" onclick="document.location.href='principal.php?sis=<?=$_REQUEST['sis']?>&ven=<?=$_REQUEST['ven']?>&pag=20&id=<?=$_REQUEST['id']?>&pro=<?=$vector['idproceso']?>';" style="cursor:pointer;" title="Descuentos"><? }else{ ?><img src="img/sol.png" style="cursor:pointer" onclick="alert('No se hacen descuentos a este tipo de procesos.');"/><? } ?></td><? } ?>
+                    <td align="left" style="text-indent:15px"><? if($vector['verano']=='1'){echo "<b>CV</b>";}else{echo "<b>AE</b> ".$vector['nivel'];} if($vector['verano']=='1'){echo "<b>&nbsp;&nbsp;-&nbsp;&nbsp;<font color='#800000'>".$vector['curso']."</font></b> ";} ?></td>
+                    <td align="center" width="90px"><? $tmp = explode("-",$vector['fecreg']); echo $tmp[2]."/".$tmp[1]."/".$tmp[0];?></td>
+                    <td align="center" width="90px"><? $tmp = explode("-",$vector['fecini']); echo $tmp[2]."/".$tmp[1]."/".$tmp[0];?></td>
+                    <td align="center" width="90px"><? $tmp = explode("-",$vector['fecfin']); echo $tmp[2]."/".$tmp[1]."/".$tmp[0];?></td>
+                    <td align="center" width="110px"><? switch($vector['estado']){ case 0: $msg="Completado"; if($vector['idtipo']==1){ switch($vector['promovido']){ case 0: $msg="Repitente";break; case 1: $msg="Promovido";break; case 2: $msg="Recuperacion";break; }} break; case 1: $msg="<b>Activo</b>";break; case 2: $msg="Anulado"; break;} echo $msg; ?></td>
+                   </tr>
+                  </table>
+                 </td>
+                </tr>
+                <? } if($numero==0){ ?><tr height="35px"><td style="color:#060" align="center">El alumno no tiene iniciada ninguna matricula</td></tr><? } ?>
+                <? if ($total_paginas > 1){ ?>
+                 <tr height="25px" align="right">
+                  <td>
+                   <?
+                if($pagina-1>0){echo " <a href='principal.php?sis=".$_REQUEST['sis']."&ven=".$_REQUEST['ven']."&pag=".$_REQUEST['pag']."&id=".$_REQUEST['id']."&pagina=".($pagina-1)."$criterio'>Ant</a>&nbsp;";}   
+                for ($i=1;$i<=$total_paginas;$i++){if ($i == $pagina){echo "<font color='#666666'><b>$pagina</b></font>&nbsp;";}else{echo "<a href='principal.php?sis=".$_REQUEST['sis']."&ven=".$_REQUEST['ven']."&id=".$_REQUEST['id']."&pag=".$_REQUEST['pag']."&pagina=".$i."$criterio'>".$i."</a>&nbsp;";}}
+                if($pagina + 1 <= $total_paginas){echo "&nbsp;<a href='principal.php?sis=".$_REQUEST['sis']."&ven=".$_REQUEST['ven']."&pag=".$_REQUEST['pag']."&id=".$_REQUEST['id']."&pagina=".($pagina+1)."$criterio'>Sig</a>";}  
+                   ?>
+                  </td>
+                 </tr> 
+                <? } ?>
+                </table>
+               </form>
+              </td>
+             </tr>
+            </table>
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+     <tr height="10px"><td></td></tr>
+    </table>
+  </td>
+ </tr>
+</table>
+<? } ?>

@@ -1,0 +1,73 @@
+function enfoque(control)
+{
+	var ctr = document.getElementById(control);
+	ctr.focus();
+}
+
+function checkState(formulario,marcado)
+{
+	var numero = formulario.elements.length;
+	for(var i=0;i<numero;i++)
+	{
+		if(formulario.elements[i].type=='checkbox')
+		{
+			formulario.elements[i].checked=marcado;
+		}
+	}
+}
+
+function marcacheck(id_check,formulario)
+{
+	checkState(formulario,false);
+	var _ck = document.getElementById(id_check);
+	var estado = true;
+	if(_ck.checked==true){estado=false;}
+	$('#'+id_check).attr("checked",estado);
+}
+
+function retornaEstado(formulario)
+{
+	var numero = formulario.elements.length;
+	for(var i=0;i<numero;i++)
+	{
+		if(formulario.elements[i].type=='checkbox' && formulario.elements[i].checked==true)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+function packudp(formulario,url)
+{
+	if(retornaEstado(formulario)==1)
+	{
+		document.location.href = url;
+	}
+	else{alert('No hay ningun elemento seleccionada.');}
+}
+
+function abrir(url,wid,hei)
+{
+	if(wid==0 && hei==0)
+	{
+		wid = screen.width ;
+		hei = screen.heigh;
+	}
+	var x = (screen.width - wid)/2;
+	var y = (screen.height - hei)/2;
+	window.open(url,'','top='+y+'px,left='+x+'px,width='+wid+'px,height='+hei+'px');
+}
+
+function busqueda(formulario)
+{
+	var numero = formulario.elements.length;
+	for(var i=0;i<numero;i++)
+	{
+		if(formulario.elements[i].type=='text' && formulario.elements[i].name=='criteria' && formulario.elements[i].value.length>0)
+		{
+			formulario.submit();
+			break;
+		}
+	}
+}
